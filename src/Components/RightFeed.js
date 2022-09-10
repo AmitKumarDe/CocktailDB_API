@@ -5,8 +5,8 @@ import "./RightFeed.css";
 import { BsSearch } from "react-icons/bs";
 // import SearchAppBar from "./SearchAppBar";
 
-const RightFeed = (props) => {
-  const { search, onInputChange } = props;
+const RightFeed = () => {
+  const [searchDrinks, setSearchDrinks] = useState("");
   const [drinks, setDrinks] = useState([]);
 
   let fetchData = async () => {
@@ -31,8 +31,10 @@ const RightFeed = (props) => {
                 type="text"
                 placeholder="search your favourite items..."
                 className="form-control"
-                value={search}
-                onChange={onInputChange}
+                value={searchDrinks}
+                onChange={(e) => {
+                  setSearchDrinks(e.target.value);
+                }}
               />
               <div className="input-group-append">
                 <button
@@ -45,44 +47,56 @@ const RightFeed = (props) => {
             </div>
           </div>
           <div>
-            {drinks.map((drinks) => {
-              return (
-                <div id="Soup">
-                  <div class="row">
-                    <h5 class="mb-4 mt-3 col-md-12">
-                      <div class="cat-title"></div>
-                    </h5>
-                    <div className="col-md-12">
-                      <div className="bg-white rounded border shadow-sm mb-4">
-                        <div className="menu-list p-3 border-bottom">
-                          <div className="media d-flex justify-content-between">
-                            <img
-                              src={drinks.strDrinkThumb}
-                              alt="Spinach Mushroom Soup"
-                              className="mr-3 rounded-pill "
-                            />
-                            <div className="media-body">
-                              <h6 className="mb-1">
-                                <span className="mr-1 food-type veg"></span>
-                                {drinks.strDrink}
-                                <span styleName="color: red;"></span>
-                              </h6>
+            {drinks
+              .filter((val) => {
+                if (searchDrinks === "") {
+                  return val;
+                } else if (
+                  val.strDrink
+                    .toLowerCase()
+                    .includes(searchDrinks.toLowerCase())
+                ) {
+                  return val;
+                }
+              })
+              .map((drinks) => {
+                return (
+                  <div id="Soup">
+                    <div class="row">
+                      <h5 class="mb-4 mt-3 col-md-12">
+                        <div class="cat-title"></div>
+                      </h5>
+                      <div className="col-md-12">
+                        <div className="bg-white rounded border shadow-sm mb-4">
+                          <div className="menu-list p-3 border-bottom">
+                            <div className="media d-flex justify-content-between">
+                              <img
+                                src={drinks.strDrinkThumb}
+                                alt="Spinach Mushroom Soup"
+                                className="mr-3 rounded-pill "
+                              />
+                              <div className="media-body">
+                                <h6 className="mb-1">
+                                  <span className="mr-1 food-type veg"></span>
+                                  {drinks.strDrink}
+                                  <span styleName="color: red;"></span>
+                                </h6>
 
-                              <p className="text-gray mb-0">
-                                ₹ 240.00- 300 mililitre
-                              </p>
+                                <p className="text-gray mb-0">
+                                  ₹ 240.00- 300 mililitre
+                                </p>
+                              </div>
+                              <button className="btn">
+                                <span>Add</span>
+                              </button>
                             </div>
-                            <button className="btn">
-                              <span>Add</span>
-                            </button>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
           </div>
         </div>
       </div>
