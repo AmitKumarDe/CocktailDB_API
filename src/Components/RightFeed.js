@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./RightFeed.css";
 import { BsSearch } from "react-icons/bs";
-// import SearchAppBar from "./SearchAppBar";
 
 const RightFeed = () => {
   const [searchDrinks, setSearchDrinks] = useState("");
@@ -48,23 +47,15 @@ const RightFeed = () => {
           </div>
           <div>
             {drinks
-              .filter((val) => {
-                if (searchDrinks === "") {
-                  return val;
-                } else if (
-                  val.strDrink
-                    .toLowerCase()
-                    .includes(searchDrinks.toLowerCase())
-                ) {
-                  return val;
-                }
-              })
-              .map((drinks) => {
+              .filter((val) =>
+                val.strDrink.toLowerCase().includes(searchDrinks.toLowerCase())
+              )
+              .map((drinks, key) => {
                 return (
-                  <div id="Soup">
-                    <div class="row">
-                      <h5 class="mb-4 mt-3 col-md-12">
-                        <div class="cat-title"></div>
+                  <div key={key}>
+                    <div className="row">
+                      <h5 className="mb-4 mt-3 col-md-12">
+                        <div className="cat-title"></div>
                       </h5>
                       <div className="col-md-12">
                         <div className="bg-white rounded border shadow-sm mb-4">
@@ -72,15 +63,11 @@ const RightFeed = () => {
                             <div className="media d-flex justify-content-between">
                               <img
                                 src={drinks.strDrinkThumb}
-                                alt="Spinach Mushroom Soup"
+                                alt={drinks.strDrink}
                                 className="mr-3 rounded-pill "
                               />
                               <div className="media-body">
-                                <h6 className="mb-1">
-                                  <span className="mr-1 food-type veg"></span>
-                                  {drinks.strDrink}
-                                  <span styleName="color: red;"></span>
-                                </h6>
+                                <h6 className="mb-1">{drinks.strDrink}</h6>
 
                                 <p className="text-gray mb-0">
                                   ₹ 240.00- 300 mililitre
