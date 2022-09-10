@@ -73,7 +73,7 @@ const RightFeed = () => {
                                   ₹ 240.00- 300 mililitre
                                 </p>
                               </div>
-                              <button className="btn">
+                              <button className="btn btn-secondary">
                                 <span>Add</span>
                               </button>
                             </div>
