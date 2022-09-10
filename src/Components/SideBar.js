@@ -20,42 +20,42 @@ const SideBar = () => {
               href="#home"
               className="filters-header border-bottom pl-4 pr-4 pt-3 pb-3"
             >
-              <ListItemIcon></ListItemIcon>
+              <ListItemIcon />
               <ListItemText primary="Menu" />
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
             <ListItemButton component="a" href="#home">
-              <ListItemIcon></ListItemIcon>
-              <ListItemText primary="Soup" />
+              <ListItemIcon />
+              <ListItemText primary="Ordinary Drink" />
               <ArrowForwardIcon />
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
             <ListItemButton component="a" href="#simple-list">
-              <ListItemIcon></ListItemIcon>
-              <ListItemText primary="Coffee" />
+              <ListItemIcon />
+              <ListItemText primary="Cocktail" />
               <ArrowForwardIcon />
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
             <ListItemButton component="a" href="#simple-list">
-              <ListItemIcon></ListItemIcon>
-              <ListItemText primary="Tea" />
+              <ListItemIcon />
+              <ListItemText primary="Shake" />
               <ArrowForwardIcon />
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
             <ListItemButton component="a" href="#simple-list">
-              <ListItemIcon></ListItemIcon>
-              <ListItemText primary="Pizza and Pasta" />
+              <ListItemIcon />
+              <ListItemText primary="Coffee / Tea" />
               <ArrowForwardIcon />
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
             <ListItemButton component="a" href="#simple-list">
-              <ListItemIcon></ListItemIcon>
-              <ListItemText primary="Recommended" />
+              <ListItemIcon />
+              <ListItemText primary="Homemade Liqueur" />
               <ArrowForwardIcon />
             </ListItemButton>
           </ListItem>
