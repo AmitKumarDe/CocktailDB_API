@@ -10,7 +10,7 @@ const RightFeed = () => {
 
   let fetchData = async () => {
     let res = await axios.get(
-      "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + searchDrinks
+      "https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Ordinary_Drink"
     );
     console.log(res.data.drinks);
     setDrinks(res.data.drinks);
@@ -73,7 +73,7 @@ const RightFeed = () => {
                                   ₹ 240.00- 300 mililitre
                                 </p>
                               </div>
-                              <button className="btn btn-light btn-sm">
+                              <button className="btn btn-light">
                                 <span>Add</span>
                               </button>
                             </div>
