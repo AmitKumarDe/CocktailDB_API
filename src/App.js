@@ -12,7 +12,7 @@ function App() {
     <Box>
       <Header />
       <Stack direction="row" spacing={1} justifyContent="space-between">
-        <SideBar />
+        <SideBar  />
         <RightFeed  />
       </Stack>
     </Box>
