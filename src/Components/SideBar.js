@@ -5,7 +5,7 @@ import Categories from "./Categories";
 
 const SideBar = () => {
   const [data, setData] = useState(Categories);
-
+  console.log(data);
   const filterItem = (categItem) => {
     // console.log(CategoriesList.strCategory);
     const updateItems = Categories.filter((curElem) => {
@@ -52,15 +52,13 @@ const SideBar = () => {
             </button>
           </div>
           <div className="menu-item">
-            <button href="#Shot" 
-            onClick={() => filterItem("Shot")}>
+            <button href="#Shot" onClick={() => filterItem("Shot")}>
               Shot
               <BsArrowRight />
             </button>
           </div>
           <div className="menu-item">
-            <button href="#Shake" 
-            onClick={() => filterItem("Shake")}>
+            <button href="#Shake" onClick={() => filterItem("Shake")}>
               Shake
               <BsArrowRight />
             </button>

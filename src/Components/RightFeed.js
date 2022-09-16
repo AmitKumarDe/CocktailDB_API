@@ -10,7 +10,7 @@ const RightFeed = () => {
 
   let fetchData = async () => {
     let res = await axios.get(
-      "https://www.thecocktaildb.com/api/json/v1/1/search.php?s" + searchDrinks
+      "https://www.thecocktaildb.com/api/json/v1/1/search.php?s" 
     );
     console.log(res.data.drinks);
     setDrinks(res.data.drinks);
