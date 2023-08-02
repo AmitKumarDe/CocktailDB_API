@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  background: #f3f7f8;
+  background: #12aed6;
   font-size: 13px;
   font-weight: 500;
   font-family: "Mulish", sans-serif;
@@ -15,8 +15,7 @@ body {
 }
 
 .restaurant-detailed-banner .img-fluid.cover {
-  height: 300px;
-  object-fit: cover;
+  height: 60vh;
 }
 
 .restaurant-detailed-header-left img {
