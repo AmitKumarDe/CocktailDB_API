@@ -10,7 +10,7 @@ const RightFeed = () => {
 
   let fetchData = async () => {
     let res = await axios.get(
-      "https://www.thecocktaildb.com/api/json/v1/1/search.php?s" 
+      "https://www.thecocktaildb.com/api/json/v1/1/search.php?s"
     );
     console.log(res.data.drinks);
     setDrinks(res.data.drinks);
@@ -21,7 +21,7 @@ const RightFeed = () => {
   }, []);
 
   return (
-    <Box bgcolor="whitesmoke" flex={8} p={20}>
+    <Box bgcolor="whitesmoke" flex={8} p={10}>
       <div className="main-content">
         <div className="offer-dedicated-body-left">
           <div className="input-group mb-4 ">
@@ -72,7 +72,9 @@ const RightFeed = () => {
                             />
                             <div className="media-body">
                               <h6 className="mb-1">{drinks.strDrink}</h6>
-
+                              {/* <span> {drinks.strIngredient1}</span>
+                              <span> {drinks.strIngredient2}</span>
+                              <span> {drinks.strIngredient3}</span> */}
                               <p className="text-gray mb-0">
                                 ₹ 240.00- 300 mililitre
                               </p>

@@ -11,7 +11,7 @@ function App() {
   return (
     <Box>
       <Header />
-      <Stack direction="row" spacing={1} justifyContent="space-between">
+      <Stack direction="row" spacing={2} justifyContent="space-between">
         <SideBar  />
         <RightFeed  />
       </Stack>

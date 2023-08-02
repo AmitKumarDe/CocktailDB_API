@@ -5,6 +5,8 @@ import Categories from "./Categories";
 
 const SideBar = () => {
   const [data, setData] = useState(Categories);
+  const[active,setActive]=useState("");
+
   console.log(data);
   const filterItem = (categItem) => {
     // console.log(CategoriesList.strCategory);
@@ -13,19 +15,22 @@ const SideBar = () => {
     });
     console.log(updateItems);
     setData(updateItems);
+    setActive(categItem.target.element);
+    console.log(categItem.target.element);
   };
 
   return (
     <div className="menu-sidebar col-md-4">
-      <div className="menu filters shadow-sm rounded bg-white mb-4">
+      <div className="menu filters shadow-sm rounded bg-white mb-3">
         <div className="filters-header border-bottom pl-4 pr-4 pt-3 pb-3">
-          <h5 className=" text-capitalize">menu</h5>
+          <h5 className=" text-capitalize ">menu</h5>
         </div>
         <div className="menu-area scroll-box ">
           <div className="menu-item">
             <button
               href="#Ordinary_Drink"
               onClick={() => filterItem("Ordinary Drink")}
+              className={active === "Ordinary Drink"? 'active': null}
             >
               Ordinary Drink <BsArrowRight />
             </button>

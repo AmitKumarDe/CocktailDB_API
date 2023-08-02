@@ -2,7 +2,10 @@
   position: -webkit-sticky;
   position: sticky;
   top: 10px;
-  padding-left: 100px;
+  /* padding-left: px; */
+  margin-top: 50px;
+  margin-left: 100px;
+  box-shadow:  #7c7171;
 }
 
 .menu .menu-area {
@@ -19,8 +22,8 @@
 }
 
 .menu .menu-item button {
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 400;
   width: 100%;
   display: block;
   background: #fff;
@@ -39,8 +42,14 @@
 }
 
 .menu .menu-item button {
-  line-height: 30px;
+  line-height: 10px;
 }
-.media{
-    cursor: pointer;
+.media {
+  cursor: pointer;
+}
+.text-capitalize{
+ padding-left: 25px;
+}
+.menu .menu-item :active{
+  background-color: red;
 }
